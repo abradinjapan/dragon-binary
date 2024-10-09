@@ -1,0 +1,40 @@
+[ variable aliases ]
+!binary.address
+!binary.integer
+!binary.bit_width
+!binary.endianess
+!binary.version
+!binary.osabi
+!binary.object_file_type
+!binary.machine_type
+!binary.offset
+!binary.index
+!binary.count
+(
+    data !dragon.cell
+)
+
+[ elf file header components ]
+!binary.elf64.e_ident
+(
+    elf_class !binary.bit_width
+    elf_endianess !binary.endianess
+    is_current_version !binary.version
+    osabi !binary.osabi
+    abi_version !binary.version
+)
+!binary.elf64_header
+(
+    identifier !binary.elf64.e_ident [ e_ident ]
+    object_type !binary.object_file_type [ e_type ]
+    machine !binary.machine_type [ e_machine ]
+    version !binary.version [ e_version ]
+    entry_point_virtual_address !binary.address [ e_entry ]
+    program_header_table_file_offset !binary.offset [ e_phoff ]
+    section_header_table_file_offset !binary.offset [ e_shoff ]
+    program_header_table_entry_count !binary.count [ e_phnum ]
+    section_header_table_entry_count !binary.count [ e_shnum ]
+    section_header_table_string_header_index !binary.index [ e_shstrndx ]
+)
+
+[ write an elf header ]
