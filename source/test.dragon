@@ -1,0 +1,11 @@
+[ entry point for testing ]
+dragon.main()() = {
+    [ show starting message ]
+    dragon.binary.display_start_message()()
+}
+
+[ starting message ]
+dragon.binary.display_start_message()() = {
+    dragon.set("Starting dragon binary testing.%0A;")(message)
+    dragon.print.buffer_as_string(message)()
+}
