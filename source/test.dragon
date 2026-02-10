@@ -6,6 +6,6 @@ dragon.main()() = {
 
 [ starting message ]
 binary.display_start_message()() = {
-    dragon.set("Starting dragon binary testing.%0A;")(message)
+    dragon.set("Starting dragon-forge binary testing.%0A;")(message)
     dragon.print.buffer_as_string(message)()
 }
